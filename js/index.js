@@ -10,15 +10,15 @@ else{
         console.log(value.name);
 
         str+= `<tr class="table-active">
-        <th scope="row"></th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><button type="button" class="btn btn-outline-danger me-2">Edit</button><button type="button" class="btn btn-outline-success">Delete</button></td>
-  </tr>
-  
-        `
+        <th scope="row">${value.empid}</th>
+        <td>${value.name}</td>
+        <td>${value.designation}</td>
+        <td>${value.salary}</td>
+        <td>${value.experience}</td>
+        <td><a href="./html/edit.html?$id={value.empid}"><button type="button" class="btn btn-outline-danger me-2">Edit</button></a>
+        <button type="button" class="btn btn-outline-success">Delete</button></td>
+  </tr>`
+  document.getElementById("tbody").innerHTML=str
     }
 
 }
