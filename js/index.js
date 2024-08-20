@@ -16,7 +16,7 @@ else{
         <td>${value.salary}</td>
         <td>${value.experience}</td>
         <td><a href="./html/edit.html?$id={value.empid}"><button type="button" class="btn btn-outline-danger me-2">Edit</button></a>
-        <button type="button" class="btn btn-outline-success">Delete</button></td>
+        <button type="button" class="btn btn-outline-success" onclick="deleteemp('${value.empid}')">Delete</button></td>
   </tr>`
   document.getElementById("tbody").innerHTML=str
     }
@@ -24,3 +24,14 @@ else{
 }
 }
 fetchData()
+
+function deleteemp(i){
+    console.log(i);
+    
+    if (confirm("Do you want to delete the employ details")) {
+        localStorage.removeItem(i);
+        fetchData();
+      } else {
+        alert("Cancelled Deleting")
+      }
+}
