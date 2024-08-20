@@ -5,7 +5,13 @@ function addemp(){
     a.designation=document.getElementById("designation").value;
     a.salary=document.getElementById("salary").value;
     a.experience=document.getElementById("experience").value;
+
     
-    localStorage.setItem(a.empid,JSON.stringify(a));
-    window.location.href="../index.html";
+    if(localStorage.getItem(a.empid)){
+        alert("Same EMPID exists...Please enter once again!!");
+    }
+    else{
+        localStorage.setItem(a.empid,JSON.stringify(a));
+        window.location.href="../index.html";
+    }
 }
