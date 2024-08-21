@@ -15,8 +15,8 @@ else{
         <td>${value.designation}</td>
         <td>${value.salary}</td>
         <td>${value.experience}</td>
-        <td><a href="./html/edit.html?id=${value.empid}"><button type="button" class="btn btn-outline-danger me-2">Edit</button></a>
-        <button type="button" class="btn btn-outline-success" onclick="deleteemp('${value.empid}')">Delete</button></td>
+        <td><a href="./html/edit.html?id=${value.empid}"><button type="button" class="btn btn-outline-success me-2"><img src="./img/edit_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></a>
+        <button type="button" class="btn btn-outline-danger" onclick="deleteemp('${value.empid}')"><img class="imge" src="./img/delete_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt=""></button></td>
   </tr>`
   document.getElementById("tbody").innerHTML=str
     }
@@ -43,7 +43,7 @@ document.getElementById("filter").addEventListener('keyup',(e)=>{
       const key=localStorage.key(i);
       const value=JSON.parse(localStorage.getItem(key));
       if(value.name.toLowerCase().includes(e.target.value.toLowerCase())){
-          str+=`<tr class="table-active">
+          str+=`<tr class="table-active border-bottom">
         <th scope="row">${value.empid}</th>
         <td>${value.name}</td>
         <td>${value.designation}</td>
@@ -53,13 +53,13 @@ document.getElementById("filter").addEventListener('keyup',(e)=>{
         <button type="button" class="btn btn-outline-success" onclick="deleteemp('${value.empid}')">Delete</button></td>
   </tr>`
       }
-      else{
-        console.log(value);
+      // else{
+      //   console.log(value);
         
-          str=`<tr>
-          <td colspan="6"><h3>No such employee</h3></td>
-        </tr>`
-      }
+      //     str=`<tr>
+      //     <td colspan="6"><h3>No such employee</h3></td>
+      //   </tr>`
+      // }
       
   }
   document.getElementById("tbody").innerHTML=str;
